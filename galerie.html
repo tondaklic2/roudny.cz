@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie | Jiří Roudný - DOPRAVA, SPEDICE</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.7rem;
+            box-shadow: 0 2px 12px rgba(30,41,59,0.10);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery-img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 4px 24px rgba(30,41,59,0.18);
+        }
+        .modal-content {
+            background: #181f2a;
+            border-radius: 1rem;
+        }
+        .modal-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            min-height: 350px;
+        }
+        .modal-body img {
+            width: auto;
+            max-width: 80vw;
+            max-height: 70vh;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgba(30,41,59,0.18);
+        }
+        .modal-header {
+            border-bottom: none;
+        }
+        .close {
+            color: #fff;
+            opacity: 1;
+            font-size: 2rem;
+        }
+        .modal-footer {
+            display: none;
+        }
+        .gallery-title {
+            color: #3b82f6;
+            font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 2rem 0;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .modal-arrow {
+            background: rgba(30,41,59,0.7);
+            border: none;
+            color: #fff;
+            font-size: 2.5rem;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            z-index: 2;
+        }
+        .modal-arrow:hover {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+<div class="overlay">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Jiří Roudný</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Úvod</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">O nás</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Služby</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="padding-top: 90px;">
+        <h1 class="gallery-title">Galerie kamionové dopravy</h1>
+        <div class="row g-4">
+            <div class="col-6 col-md-4 col-lg-3"><img src="IMG_20250602_112238_MP.jpg" class="gallery-img" data-index="0" alt="Kamion vlastní 1"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="scania 1.jpeg" class="gallery-img" data-index="1" alt="Kamion vlastní 2"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="scania 2.jpeg" class="gallery-img" data-index="2" alt="Kamion vlastní 3"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="20220628_203159_optimized.jpg" class="gallery-img" data-index="3" alt="Kamion vlastní 4"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="20230620_130440_optimized.jpg" class="gallery-img" data-index="4" alt="Kamion vlastní 5"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="20231114_082429_optimized.jpg" class="gallery-img" data-index="5" alt="Kamion vlastní 6"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="20241025_075608_optimized.jpg" class="gallery-img" data-index="6" alt="Kamion vlastní 7"></div>
+        </div>
+    </div>
+    <!-- Modal pro zobrazení obrázku -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="modal-arrow" id="prevBtn" title="Předchozí">&#8592;</button>
+            <img src="" id="modalImage" alt="Zvětšený kamion">
+            <button type="button" class="modal-arrow" id="nextBtn" title="Další">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+        &copy; 2025 Jiří Roudný - DOPRAVA, SPEDICE
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Obrázky v galerii
+    const galleryImages = [
+        "IMG_20250602_112238_MP.jpg",
+        "scania 1.jpeg",
+        "scania 2.jpeg",
+        "20220628_203159_optimized.jpg",
+        "20230620_130440_optimized.jpg",
+        "20231114_082429_optimized.jpg",
+        "20241025_075608_optimized.jpg"
+    ];
+    let currentIndex = 0;
+    const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+    const modalImage = document.getElementById('modalImage');
+    const galleryImgs = document.querySelectorAll('.gallery-img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function showImage(index) {
+        currentIndex = (index + galleryImages.length) % galleryImages.length;
+        modalImage.src = galleryImages[currentIndex];
+    }
+    galleryImgs.forEach((img, idx) => {
+        img.addEventListener('click', () => {
+            showImage(idx);
+            modal.show();
+        });
+    });
+    prevBtn.addEventListener('click', () => {
+        showImage(currentIndex - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+        showImage(currentIndex + 1);
+    });
+    // Klávesové šipky
+    document.addEventListener('keydown', (e) => {
+        if (!document.getElementById('galleryModal').classList.contains('show')) return;
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        if (e.key === 'Escape') modal.hide();
+    });
+    </script>
+</div>
+</body>
+</html>

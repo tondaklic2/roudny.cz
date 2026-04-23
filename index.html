@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiří Roudný - DOPRAVA, SPEDICE</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70" tabindex="0">
+<div class="overlay">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Jiří Roudný</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Úvod</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Služby</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="home" class="hero">        <div class="container">
+            <h1>Jiří Roudný - DOPRAVA, SPEDICE</h1>
+            <p class="lead mt-3">Specialista na kamionovou a nadrozměrnou přepravu po celé Evropě</p>
+            <p class="mt-4">Zajišťuji profesionální kamionovou přepravu a nadrozměrné transporty pro firmy i jednotlivce. S důrazem na spolehlivost, bezpečnost a osobní přístup nabízím komplexní logistická řešení na míru. Působím po celé České republice i v zahraničí, zejména v rámci Evropské unie. Využijte mé dlouholeté zkušenosti a moderní vozový park pro bezpečnou a efektivní přepravu vašeho nákladu včetně nadrozměrných zásilek.</p>
+        </div>    </header>
+    <section id="about" class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">O nás</h2>
+            <p>
+                Jiří Roudný - DOPRAVA, SPEDICE je česká firma s dlouholetou tradicí v oblasti silniční dopravy a spedice. Na trhu působím již více než <strong>15 let</strong> a za tu dobu jsem si vybudoval pověst spolehlivého partnera pro zákazníky nejen v České republice, ale i po celé Evropě. Sídlo firmy je v Boskovicích, odkud zajišťuji efektivní logistiku a přepravu zboží do všech koutů Evropy.
+            </p>
+            <p>
+                Zakládám si na osobním přístupu, rychlosti, bezpečnosti a maximální spokojenosti klientů. Díky zkušenostem a modernímu vozovému parku jsem schopen zajistit přepravu jakéhokoliv nákladu včas a v pořádku. Nabízím individuální řešení na míru podle potřeb každého zákazníka.
+            </p>
+        </div>
+    </section>
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Naše služby</h2>            <ul class="services-list">
+                <li>Mezinárodní a vnitrostátní kamionová doprava</li>
+                <li>Nadrozměrná přeprava a speciální transporty</li>
+                <li>Spediční služby a logistika</li>
+                <li>Expresní přepravy a just-in-time dodávky</li>
+                <li>Poradenství v oblasti kamionové dopravy a logistiky</li>
+                <li>Individuální řešení na míru</li>
+            </ul>
+            <img class="thematic-img" src="obrazek_main.png" alt="Kamionová doprava Jiří Roudný">
+        </div>
+    </section>
+    <section id="contact" class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Kontaktujte nás</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="info mb-3">
+                        <p><strong>Firma:</strong> Jiří Roudný - DOPRAVA, SPEDICE</p>
+                        <p><strong>Adresa:</strong> Dr.Svěráka 259/14, 68001 Boskovice</p>
+                        <p><strong>Email:</strong> <a href="mailto:doprava@roudny.cz">doprava@roudny.cz</a></p>
+                        <p><strong>IČ:</strong> 87555409</p>
+                        <p><strong>DIČ:</strong> CZ8703244088</p>
+                        <p><strong>Telefon:</strong> +420 705 506 606</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form class="contact-form" id="contactForm" autocomplete="off">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Jméno a příjmení *</label>
+                            <input type="text" class="form-control" id="name" name="Jméno" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail *</label>
+                            <input type="email" class="form-control" id="email" name="E-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Zpráva *</label>
+                            <textarea class="form-control" id="message" name="Zpráva" rows="4" required></textarea>
+                        </div>
+                        <input type="text" name="phone" style="display:none" tabindex="-1" autocomplete="off">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Odeslat</button>
+                    </form>
+                    <div id="formResult" style="display:none;"></div>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.getElementById('contactForm');
+                        const result = document.getElementById('formResult');
+                        const submitBtn = document.getElementById('submitBtn');
+                        let sent = false;
+                        form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            if (sent) return;
+                            submitBtn.disabled = true;
+                            submitBtn.textContent = 'Odesílám...';
+                            const data = new FormData(form);
+                            fetch('sendmail.php', {
+                                method: 'POST',
+                                body: data
+                            })
+                            .then(res => res.text())
+                            .then(text => {
+                                if (text.trim() === 'OK') {
+                                    form.style.display = 'none';
+                                    result.innerHTML = '<div class="alert alert-success mt-3">Děkujeme za zprávu! Ozveme se vám co nejdříve.</div>';
+                                    result.style.display = 'block';
+                                    sent = true;
+                                } else {
+                                    submitBtn.disabled = false;
+                                    submitBtn.textContent = 'Odeslat';
+                                    result.innerHTML = '<div class="alert alert-danger mt-3">' + text + '</div>';
+                                    result.style.display = 'block';
+                                }
+                            })
+                            .catch(() => {
+                                submitBtn.disabled = false;
+                                submitBtn.textContent = 'Odeslat';
+                                result.innerHTML = '<div class="alert alert-danger mt-3">Chyba při odesílání. Zkuste to prosím znovu.</div>';
+                                result.style.display = 'block';
+                            });
+                        });
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 Jiří Roudný - DOPRAVA, SPEDICE
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+</body>
+</html>
